@@ -1,0 +1,227 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+
+  /** colors */
+  --dark: 238 49% 19%;
+  --muted: 239 17% 53%;
+  --accent: 43 100% 71%;
+  --accent--muted: 36 83% 63%;
+  --neutral1: 0 0% 100%;
+  --neutral2: 0 0% 97%;
+  --neutral3: 0 0% 93%;
+  --neutral4: 0 0% 90%;
+  --neutral5: 0 0% 79%;
+
+  /** fonts */
+  --font-heading: "Merriweather", serif;
+  --font-body: "Poppins", sans-serif;
+
+}
+
+body {
+  color: #191B4A;
+  min-height: 100vh;
+  background-color: hsl(var(--neutral2));
+  display: grid;
+  place-content: center;
+  margin: .5rem .5rem 1rem;
+}
+
+.card {
+  background-color: hsl(var(--neutral1));
+  display: grid;
+  padding: 5.25rem;
+  place-content: center;
+  gap: 3.5rem;
+  border-radius: 1.4375rem;
+  background: #F8F8F8;
+  box-shadow: -5px -5px 12px 0px rgba(25, 27, 74, 0.10);
+  position: relative;
+  transition: .5s;
+}
+
+.card::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -64px;
+  background-color: hsl(var(--neutral1));
+  z-index: -1;
+  left: -66px;
+  border-radius: 1.4375rem;
+  transition: .5s;
+
+}
+
+.card:hover::after {
+  left: -33px;
+  top: 0pc;
+}
+
+.card:hover{
+  box-shadow: 5px 5px 12px 0px rgba(25, 27, 74, 0.10);
+}
+
+h1 {
+  font-weight: 900;
+  line-height: 43px;
+  max-width: 14ch;
+  font-style: normal;
+  flex: 1 1 0%;
+}
+
+.info_flex {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1.7;
+  gap: 56px;
+}
+
+.rateBar {
+  display: grid;
+  padding: 1.0625rem;
+  place-content: center;
+  gap: 0.5rem;
+  border-radius: 0.9375rem;
+  border: 3px solid #FFF;
+  background: #FFF;
+  box-shadow: 0px 7px 20px 0px rgba(115, 116, 156, 0.08);
+  text-align: center;
+}
+
+.ratePoints {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.points {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+}
+
+.rateBar p {
+  font-family: Poppins;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.searchBar button {
+  border: none;
+  background-color: transparent;
+}
+
+.searchBar {
+  display: flex;
+  padding: .5rem;
+  border-radius: 34px;
+  align-items: center;
+  gap: 0.625rem;
+  background-color: #fff;
+}
+
+.searchBar input[type="search"] {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  padding: 7px;
+  position: relative;
+}
+
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+.searchBar input[type="search"]::placeholder {
+  color: #73749C;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.searchBar input[type="search"]:focus {
+  outline: none !important
+}
+
+.lineProg {
+  width: 100%;
+  height: 7px;
+  border-radius: 0.8125rem;
+  background-color: #eee;
+  position: relative;
+  margin-right: 10px;
+}
+
+.lineProg span {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 0.8125rem;
+  border: 1px solid #EFB153;
+  background: #FFD66C;
+}
+
+.reviews p {
+  margin-bottom: 15px;
+
+}
+
+.rev_holder {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.rev_holder .muliLined {
+  display: flex;
+  align-items: center;
+}
+
+svg {
+  fill: #FFD66C;
+  stroke-width: 0.794px;
+  stroke: #EFB153;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.write_rev {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    gap: 0.625rem;
+    border-radius: 2.125rem;
+    background: #191B4A;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: .2s;
+}
+
+.write_rev:where(:focus,:hover){
+  outline: 4px solid #0b0f87;
+  outline-offset: 4px;
+  background-color: #0b0f87;
+}
